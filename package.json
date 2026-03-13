@@ -1,6 +1,6 @@
 {
   "name": "expotsi",
-  "version": "1.0.0",
+"version": "1.0.1",
   "description": "Readable npm quick-reference package for React Native Expo concepts.",
   "license": "MIT",
   "files": [
