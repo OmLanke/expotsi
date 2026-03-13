@@ -1,5 +1,8 @@
 # Tab Navigation
 
+## Idea
+Screens are parallel, user switches using tabs.
+
 ## Definition
 Tab navigation switches between top-level app sections using a tab bar.
 Each tab usually represents an independent navigation branch.
@@ -18,24 +21,24 @@ Each tab usually represents an independent navigation branch.
 
 ```javascript
 import React from "react";
-import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Text, View } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
-function Feed() {
+function HomeScreen() {
   return (
     <View>
-      <Text>Feed</Text>
+      <Text>Home Tab</Text>
     </View>
   );
 }
 
-function Profile() {
+function ProfileScreen() {
   return (
     <View>
-      <Text>Profile</Text>
+      <Text>Profile Tab</Text>
     </View>
   );
 }
@@ -44,10 +47,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Feed" component={Feed} />
-        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
+```
+
+## Result UI
+
+```
+[ Home ]   [ Profile ]
 ```

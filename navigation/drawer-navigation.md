@@ -1,5 +1,8 @@
 # Drawer Navigation
 
+## Idea
+A sidebar menu opens from the left.
+
 ## Definition
 Drawer navigation provides a side panel menu for switching between app screens.
 It is useful when an app has multiple top-level destinations.
@@ -18,24 +21,24 @@ It is useful when an app has multiple top-level destinations.
 
 ```javascript
 import React from "react";
-import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { Text, View } from "react-native";
 
 const Drawer = createDrawerNavigator();
 
-function Home() {
+function HomeScreen() {
   return (
     <View>
-      <Text>Home</Text>
+      <Text>Home Screen</Text>
     </View>
   );
 }
 
-function Settings() {
+function SettingsScreen() {
   return (
     <View>
-      <Text>Settings</Text>
+      <Text>Settings Screen</Text>
     </View>
   );
 }
@@ -44,10 +47,18 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Settings" component={Settings} />
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Settings" component={SettingsScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
 }
+```
+
+## Result UI
+
+```
+☰ Menu
+Home
+Settings
 ```

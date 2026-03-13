@@ -14,3 +14,27 @@
 - Detail flow: Stack
 - Main app sections: Tab
 - Larger menu-based app: Drawer
+
+## Quick Recognition Trick
+
+Look at the import:
+
+```
+createNativeStackNavigator → Stack navigation
+createBottomTabNavigator   → Tab navigation
+createDrawerNavigator      → Drawer navigation
+```
+
+## Nested Navigation Pattern
+
+The most common real-world pattern used in React Native apps and interviews:
+
+```
+Stack
+   └ Tab
+        ├ Home
+        ├ Profile
+        └ Settings
+```
+
+A Stack navigator wraps a Tab navigator, allowing full-screen modals or detail screens to appear on top of any tab.

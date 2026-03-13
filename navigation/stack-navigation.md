@@ -1,5 +1,8 @@
 # Stack Navigation
 
+## Idea
+Screens are pushed on top of each other like a stack.
+
 ## Definition
 Stack navigation manages screens in a last-in, first-out stack, similar to page history.
 It is useful for detail flows like list → detail → edit.
@@ -18,17 +21,25 @@ It is useful for detail flows like list → detail → edit.
 
 ```javascript
 import React from "react";
-import { Button, View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { View, Text, Button } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
-function Home({ navigation }) {
-  return <Button title="Open Details" onPress={() => navigation.navigate("Details")} />;
+function HomeScreen({ navigation }) {
+  return (
+    <View>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate("Details")}
+      />
+    </View>
+  );
 }
 
-function Details() {
+function DetailsScreen() {
   return (
     <View>
       <Text>Details Screen</Text>
@@ -40,10 +51,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+```
+
+## Key Line
+
+```javascript
+navigation.navigate("Details")
 ```
