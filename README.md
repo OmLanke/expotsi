@@ -23,6 +23,14 @@ This package is intentionally documentation-only:
 - `state-management/` → State approaches
 - `data/` → Data handling and async concepts
 
+## Included Topics
+
+- React basics, components, props, state, lifecycle, and event handling
+- State management with `useState`, `useReducer`, Context API / `useContext`, and Redux
+- Navigation with Stack, Tab, and Drawer patterns
+- Data topics including async operations, `fetch`, Axios, AsyncStorage, SQLite, and Realm
+- Comparison notes such as props vs state, `fetch` vs Axios, AsyncStorage vs SQLite vs Realm, and Stack vs Tab vs Drawer
+
 ## Usage
 
 After install, browse:
